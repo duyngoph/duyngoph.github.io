@@ -6,9 +6,18 @@
   <title>Research — Tom Ngo</title>
   <meta name="description" content="Tom Ngo's research on deep reinforcement learning for intelligent wireless networks, including Wi-Fi 7 multi-link operation and 6G technologies." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,6 +30,10 @@
         <a href="projects.html">Projects</a>
         <a href="cv.html">CV</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -34,7 +47,7 @@
         <h1 style="font-size: 2rem; margin: 0 0 18px;">Learning-based optimization of intelligent wireless networks</h1>
         <p class="lead">
           My research applies deep reinforcement learning to the design and optimization of
-          next-generation wireless networks. At the Wireless Intelligent Networks (WIN) Lab, I build
+          next-generation wireless networks. At the <a href="https://krishnaramamoorthy.com/winlab/" target="_blank" rel="noopener">Wireless Intelligent Networks (WIN) Lab</a>, I build
           <strong>ns-3</strong> simulation environments to train and evaluate RL agents — such as Deep
           Q-Networks (DQN) — for Wi-Fi 7 multi-link operation, and I study how learning-based methods
           can optimize emerging 6G technologies.
