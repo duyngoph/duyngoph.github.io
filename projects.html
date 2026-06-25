@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Tom Ngo</title>
+  <meta name="description" content="Selected machine learning and AI projects by Tom Ngo, including an autonomous Job Tracker AI Agent and customer demographics prediction at SMUD." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Tom Ngo</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 56px;">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h1 style="font-size: 2rem; margin: 0 0 14px;">Selected Projects</h1>
+        <p class="muted lead">
+          A selection of machine learning, AI, and data science projects spanning agentic systems,
+          production ML, and applied econometrics.
+        </p>
+
+        <div class="cards" style="margin-top: 28px;">
+          <article class="card">
+            <h3>Job Tracker AI Agent</h3>
+            <p class="meta">October 2025 · Personal Project</p>
+            <ul>
+              <li>Built an autonomous AI agent leveraging OpenAI LLMs, the Gmail API, and the Google Sheets API to track, analyze, and update job-application data from emails in real time — capable of handling 1,000+ emails daily.</li>
+              <li>Engineered a semantic extraction pipeline achieving 100% accuracy in identifying company, role, recruiter, and application-status details across diverse email formats.</li>
+              <li>Reduced manual email-tracking time by 95% through end-to-end CRM synchronization, enabling a 24/7, zero-maintenance system.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Generative AI</span>
+              <span class="tag">Agentic AI</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Customer Demographics Cohort Prediction</h3>
+            <p class="meta">December 2024 · Sacramento Municipal Utility District (SMUD)</p>
+            <ul>
+              <li>Optimized model precision by 10% through hyperparameter tuning with Bayesian Optimization and HyperOpt.</li>
+              <li>Achieved a 20% accuracy gain by developing a K-means clustering pipeline for feature engineering, processing over 7,000 geospatial records.</li>
+              <li>Improved data quality by 100% using the ArcGIS Geocoding API to recover missing geospatial data, ensuring robust analysis.</li>
+              <li>Raised the model's decision rate by 40% by resolving training-set imbalance with SMOTE oversampling.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">XGBoost</span>
+              <span class="tag">K-means</span>
+              <span class="tag">ArcGIS</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Airflow</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Impact of Education &amp; Government Spending on Unemployment</h3>
+            <p class="meta">November 2024 · Econometrics Research</p>
+            <ul>
+              <li>Conducted a panel-data analysis using government expenditure and unemployment data from World Bank Open Data.</li>
+              <li>Built lagged econometric models on 2,599 data points in Stata to investigate the causal relationship between education spending and unemployment, selecting optimal lags via AIC/BIC.</li>
+              <li>Found no statistically significant causal relationship, highlighting the challenges of omitted-variable bias and endogeneity.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Stata</span>
+              <span class="tag">Panel Data</span>
+              <span class="tag">Econometrics</span>
+              <span class="tag">Causal Inference</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="mailto:pngo2@scu.edu" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/duyngoph" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.96H5.56v8.38h2.78zM6.95 8.73a1.61 1.61 0 1 0 0-3.22 1.61 1.61 0 0 0 0 3.22zm11.39 9.61v-4.6c0-2.46-1.31-3.6-3.06-3.6-1.41 0-2.04.78-2.39 1.32v-1.13h-2.78c.04.78 0 8.38 0 8.38h2.78v-4.68c0-.25.02-.5.09-.68.2-.5.66-1.01 1.42-1.01.99 0 1.39.76 1.39 1.86v4.51h2.55z"/></svg>
+        </a>
+        <a href="https://github.com/duyngoph" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Tom Ngo</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
