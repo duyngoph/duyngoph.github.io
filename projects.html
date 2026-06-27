@@ -12,11 +12,12 @@
         var t = localStorage.getItem("theme") || "light";
         document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
+      document.documentElement.classList.add("reveal-ready");
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -40,7 +41,7 @@
   </header>
 
   <main>
-    <section class="section" style="padding-top: 56px;">
+    <section class="section reveal" style="padding-top: 56px;">
       <div class="container">
         <p class="eyebrow">Projects</p>
         <h1 style="font-size: 2rem; margin: 0 0 14px;">Selected Projects</h1>
