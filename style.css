@@ -9,9 +9,12 @@
   --text: #1a1d23;
   --text-muted: #5b6470;
   --text-faint: #8a929c;
-  --accent: #1a56db;
-  --accent-hover: var(--accent-hover);
-  --accent-soft: #e8effc;
+  --accent: #796345;
+  --accent-hover: #5f4b32;
+  --accent-soft: #f3ecdf;
+  --accent-fill: #d8c4a3;
+  --accent-fill-hover: #cbb18b;
+  --accent-on-fill: #372c20;
   --border: #e6e8ec;
   --surface: #ffffff;
   --header-bg: rgba(255, 255, 255, 0.85);
@@ -35,9 +38,9 @@ html {
   --text: #e7e9ee;
   --text-muted: #a6adba;
   --text-faint: #707783;
-  --accent: #6699ff;
-  --accent-hover: #8fb4ff;
-  --accent-soft: #1a2742;
+  --accent: #dbc6a4;
+  --accent-hover: #ecdcc4;
+  --accent-soft: #30291f;
   --border: #272b34;
   --surface: #171a21;
   --header-bg: rgba(15, 17, 21, 0.82);
@@ -83,6 +86,11 @@ a {
 a:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+::selection {
+  background: var(--accent-fill);
+  color: var(--accent-on-fill);
 }
 
 h1,
@@ -179,7 +187,7 @@ img {
   right: 0;
   bottom: -2px;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent-fill);
   border-radius: 2px;
 }
 
@@ -624,8 +632,8 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-fill);
+  color: var(--accent-on-fill);
   padding: 10px 18px;
   border-radius: 8px;
   font-weight: 600;
@@ -634,8 +642,8 @@ main {
 }
 
 .btn:hover {
-  background: var(--accent-hover);
-  color: #fff;
+  background: var(--accent-fill-hover);
+  color: var(--accent-on-fill);
   text-decoration: none;
   transform: translateY(-1px);
 }

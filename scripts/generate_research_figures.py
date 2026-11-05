@@ -15,7 +15,6 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 OUT = Path(__file__).resolve().parents[1] / "assets"
-COLORS = ["#447de8", "#d49129", "#229b89"]
 PATH_LENGTHS = [40, 2 * math.hypot(20, 10), 2 * math.hypot(20, 15)]
 DELAYS = [(length - 40) / 299792458 * 1e9 for length in PATH_LENGTHS]
 POWERS = [1.0, 0.35, 0.15]
@@ -27,6 +26,7 @@ for theme, bg, fg, muted, border in [
     ("light", "#f7f8fa", "#1a1d23", "#5b6470", "#d7dce4"),
     ("dark", "#171a21", "#e7e9ee", "#a6adba", "#39414e"),
 ]:
+    COLORS = ["#9a7e55" if theme == "light" else "#d8c4a3", "#d49129", "#229b89"]
     fig, ax = plt.subplots(figsize=(7.2, 4.6), facecolor=bg)
     ax.set_facecolor(bg)
     ax.set_xlim(-10, 50)
@@ -76,6 +76,9 @@ for theme, bg, fg, muted, border in [
     if theme == "light":
         fig.savefig("/tmp/sionna-delay-profile-preview.png", dpi=160)
     plt.close(fig)
+
+for svg in OUT.glob("sionna-*.svg"):
+    svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
 
 print("Generated light and dark SVG figures.")
 print("Excess delays (ns):", [round(delay, 2) for delay in DELAYS])
