@@ -365,6 +365,12 @@ main {
   border-color: #d6dae1;
 }
 
+.news-cards .card:hover {
+  border-color: var(--accent-fill);
+  box-shadow: 0 0 18px rgba(216, 196, 163, 0.28),
+    0 8px 24px rgba(216, 196, 163, 0.18);
+}
+
 .card h3 {
   font-size: 1.12rem;
   margin: 0 0 4px;
