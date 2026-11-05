@@ -470,6 +470,51 @@ main {
   color: var(--text-muted);
 }
 
+/* ----------  Wireless modeling figures  ---------- */
+.model-figure {
+  margin: 24px 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+}
+
+.model-figure-heading {
+  padding: 24px 24px 0;
+}
+
+.model-figure-heading h3 {
+  margin: 6px 0 0;
+  font-size: 1.3rem;
+}
+
+.model-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.model-figure figcaption {
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.model-source {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.model-dark,
+[data-theme="dark"] .model-light {
+  display: none;
+}
+
+[data-theme="dark"] .model-dark {
+  display: block;
+}
+
 /* ----------  Publications  ---------- */
 .pub-list {
   list-style: none;

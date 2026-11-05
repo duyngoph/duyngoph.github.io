@@ -65,16 +65,20 @@
         <h2 class="section-title">Research Interests</h2>
         <div class="interest-grid">
           <div class="interest">
+            <h3>6G Technologies</h3>
+            <p>Optimizing Fluid Antenna, Pinching Antenna, RSMA, and NOMA in cellular systems.</p>
+          </div>
+          <div class="interest">
+            <h3>Integrated Sensing &amp; Communication</h3>
+            <p>ISAC: exploring joint sensing and data communication in next-generation wireless networks.</p>
+          </div>
+          <div class="interest">
             <h3>Reinforcement Learning for Networks</h3>
             <p>Designing and training DQN agents for intelligent WiFi and cellular network optimization.</p>
           </div>
           <div class="interest">
             <h3>Wi-Fi 7 &amp; Multi-Link Operation</h3>
             <p>Application-aware, learning-based uplink traffic allocation across MLO links.</p>
-          </div>
-          <div class="interest">
-            <h3>6G Technologies</h3>
-            <p>Optimizing Fluid Antenna, Pinching Antenna, RSMA, and NOMA in cellular systems.</p>
           </div>
           <div class="interest">
             <h3>Network Simulation</h3>
@@ -89,6 +93,54 @@
             <p>Multi-objective ("quadrilemma") optimization for resource-constrained systems.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section reveal" aria-labelledby="sionna-heading">
+      <div class="container">
+        <p class="eyebrow">Wireless Modeling</p>
+        <h2 class="section-title" id="sionna-heading">From propagation paths to wireless channels</h2>
+        <p class="muted">
+          <a href="https://nvlabs.github.io/sionna/" target="_blank" rel="noopener">NVIDIA Sionna</a>
+          provides tools for radio propagation, link-level, and system-level simulation.
+          Sionna RT models how signals travel through a scene; Sionna PHY supports evaluating
+          communication links. The examples below illustrate the multipath behavior behind channel modeling.
+        </p>
+        <figure class="model-figure">
+          <div class="model-figure-heading">
+            <span class="eyebrow">01 / Propagation</span>
+            <h3>One signal, multiple paths</h3>
+          </div>
+          <img class="model-light" src="assets/sionna-multipath-light.svg" width="720" height="460" loading="lazy"
+               alt="Conceptual wireless scene: a transmitter and receiver 40 metres apart, with a direct blue path and two reflected paths of 44.7 and 50 metres from parallel surfaces." />
+          <img class="model-dark" src="assets/sionna-multipath-dark.svg" width="720" height="460" loading="lazy"
+               alt="Conceptual wireless scene: a transmitter and receiver 40 metres apart, with a direct blue path and two reflected paths of 44.7 and 50 metres from parallel surfaces." />
+          <figcaption>
+            A direct path and two single reflections connect the transmitter (TX) and receiver (RX).
+            Longer paths arrive later. This simplified scene shows the kind of propagation geometry
+            studied with ray tracing; it is a conceptual illustration, not a Sionna rendering.
+          </figcaption>
+        </figure>
+        <figure class="model-figure">
+          <div class="model-figure-heading">
+            <span class="eyebrow">02 / Channel response</span>
+            <h3>How reflections spread a signal in time</h3>
+          </div>
+          <img class="model-light" src="assets/sionna-delay-profile-light.svg" width="720" height="460" loading="lazy"
+               alt="Illustrative power delay profile: direct path at zero excess delay with relative power 1; reflections at 15.75 and 33.36 nanoseconds with relative powers 0.35 and 0.15." />
+          <img class="model-dark" src="assets/sionna-delay-profile-dark.svg" width="720" height="460" loading="lazy"
+               alt="Illustrative power delay profile: direct path at zero excess delay with relative power 1; reflections at 15.75 and 33.36 nanoseconds with relative powers 0.35 and 0.15." />
+          <figcaption>
+            Illustrative power delay profile for the three paths above. Excess delay is the extra
+            travel time relative to the direct path, calculated from path length and the speed of light.
+            Relative powers are chosen for illustration; these are not measured or simulated research results.
+          </figcaption>
+        </figure>
+        <p class="model-source">
+          Explore the tools:
+          <a href="https://nvlabs.github.io/sionna/rt/tutorials/Introduction.html" target="_blank" rel="noopener">Sionna RT tutorial</a>
+          &middot; <a href="https://nvlabs.github.io/sionna/phy/" target="_blank" rel="noopener">Sionna PHY documentation</a>
+        </p>
       </div>
     </section>
 
@@ -116,7 +168,7 @@
           <li class="pub">
             <span class="pub-year">2026</span>
             <div>
-              <p class="pub-title">Application-Aware Learning-Based Uplink Traffic Allocation for Wi-Fi 7 MLO</p>
+              <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11623620" target="_blank" rel="noopener">Application-Aware Learning-Based Uplink Traffic Allocation for Wi-Fi 7 MLO</a></p>
               <p class="pub-authors">
                 Brian Trinh, Samarth Kulkarni, <span class="me">Duy P. Ngo</span>,
                 Krishna Murthy Kattiyan Ramamoorthy
