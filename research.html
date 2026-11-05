@@ -27,6 +27,7 @@
       <nav class="nav-links" id="navLinks">
         <a href="index.html">About</a>
         <a href="research.html" aria-current="page">Research</a>
+        <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
         <a href="cv.html">CV</a>
       </nav>
@@ -57,6 +58,7 @@
           applied machine learning: how adaptive, data-driven agents can manage the growing complexity
           of modern communication systems while remaining reproducible and reliable.
         </p>
+        <p><a href="publications.html">View my publications &rarr;</a></p>
       </div>
     </section>
 
@@ -99,86 +101,47 @@
     <section class="section reveal" aria-labelledby="sionna-heading">
       <div class="container">
         <p class="eyebrow">Wireless Modeling</p>
-        <h2 class="section-title" id="sionna-heading">From propagation paths to wireless channels</h2>
+        <h2 class="section-title" id="sionna-heading">Smart-industry simulation with Sionna RT</h2>
         <p class="muted">
-          <a href="https://nvlabs.github.io/sionna/" target="_blank" rel="noopener">NVIDIA Sionna</a>
-          provides tools for radio propagation, link-level, and system-level simulation.
-          Sionna RT models how signals travel through a scene; Sionna PHY supports evaluating
-          communication links. The examples below illustrate the multipath behavior behind channel modeling.
+          My smart-factory simulation combines a Blender model of an industrial environment with
+          <a href="https://nvlabs.github.io/sionna/rt/" target="_blank" rel="noopener">Sionna RT</a>
+          ray tracing to study wireless propagation, reflections, and blockage.
+          These renders show the factory scene and the computed radio paths through it.
         </p>
         <figure class="model-figure">
           <div class="model-figure-heading">
-            <span class="eyebrow">01 / Propagation</span>
-            <h3>One signal, multiple paths</h3>
+            <span class="eyebrow">01 / Industrial environment</span>
+            <h3>Smart-factory scene</h3>
           </div>
-          <img class="model-light" src="assets/sionna-multipath-light.svg" width="720" height="460" loading="lazy"
-               alt="Conceptual wireless scene: a transmitter and receiver 40 metres apart, with a direct beige path and two reflected paths of 44.7 and 50 metres from parallel surfaces." />
-          <img class="model-dark" src="assets/sionna-multipath-dark.svg" width="720" height="460" loading="lazy"
-               alt="Conceptual wireless scene: a transmitter and receiver 40 metres apart, with a direct beige path and two reflected paths of 44.7 and 50 metres from parallel surfaces." />
+          <a href="assets/smart-factory-overview.png" target="_blank" rel="noopener" aria-label="Open the smart-factory scene at full resolution">
+            <img src="assets/smart-factory-overview.png" width="1600" height="1200" loading="lazy"
+                 alt="Blender cutaway of a smart factory with robotic workcells, storage racks, a conveyor, autonomous vehicles, and a glazed control room." />
+          </a>
           <figcaption>
-            A direct path and two single reflections connect the transmitter (TX) and receiver (RX).
-            Longer paths arrive later. This simplified scene shows the kind of propagation geometry
-            studied with ray tracing; it is a conceptual illustration, not a Sionna rendering.
+            Blender overview of the 28 &times; 18 &times; 6 m factory model, including robotic workcells,
+            storage racks, a conveyor, and a control room. The scene geometry is exported to Sionna RT
+            for wireless-channel simulation.
           </figcaption>
         </figure>
         <figure class="model-figure">
           <div class="model-figure-heading">
-            <span class="eyebrow">02 / Channel response</span>
-            <h3>How reflections spread a signal in time</h3>
+            <span class="eyebrow">02 / Ray tracing</span>
+            <h3>Rendered propagation paths</h3>
           </div>
-          <img class="model-light" src="assets/sionna-delay-profile-light.svg" width="720" height="460" loading="lazy"
-               alt="Illustrative power delay profile: direct path at zero excess delay with relative power 1; reflections at 15.75 and 33.36 nanoseconds with relative powers 0.35 and 0.15." />
-          <img class="model-dark" src="assets/sionna-delay-profile-dark.svg" width="720" height="460" loading="lazy"
-               alt="Illustrative power delay profile: direct path at zero excess delay with relative power 1; reflections at 15.75 and 33.36 nanoseconds with relative powers 0.35 and 0.15." />
+          <a href="assets/smart-factory-propagation.png" target="_blank" rel="noopener" aria-label="Open the Sionna propagation-path render at full resolution">
+            <img src="assets/smart-factory-propagation.png" width="1000" height="750" loading="lazy"
+                 alt="Sionna RT render of the factory with computed propagation paths connecting a red transmitter marker to receiver markers through direct and reflected routes." />
+          </a>
           <figcaption>
-            Illustrative power delay profile for the three paths above. Excess delay is the extra
-            travel time relative to the direct path, calculated from path length and the speed of light.
-            Relative powers are chosen for illustration; these are not measured or simulated research results.
+            Propagation paths computed and rendered by Sionna RT in the imported factory scene.
+            Direct and reflected routes show how the industrial geometry creates multipath channels.
+            This is simulation output from a modeled factory, rather than a physical-site measurement.
           </figcaption>
         </figure>
         <p class="model-source">
           Explore the tools:
           <a href="https://nvlabs.github.io/sionna/rt/tutorials/Introduction.html" target="_blank" rel="noopener">Sionna RT tutorial</a>
-          &middot; <a href="https://nvlabs.github.io/sionna/phy/" target="_blank" rel="noopener">Sionna PHY documentation</a>
         </p>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="container">
-        <h2 class="section-title">Publications</h2>
-        <p class="muted" style="margin-top:-8px;">
-          I publish under the name <strong>Duy P. Ngo</strong>. See my
-          <a href="https://scholar.google.com/citations?user=aA_KUTAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.
-        </p>
-        <ul class="pub-list">
-          <li class="pub">
-            <span class="pub-year">2027</span>
-            <div>
-              <p class="pub-title">Adaptive Congestion Control for Competing Applications at the Wireless Edge</p>
-              <p class="pub-authors">
-                <span class="me">Duy P. Ngo</span>, Stephanie Campos, Sean Lai, Andy Li,
-                Derek Chui, Ramamoorthy Krishna
-              </p>
-              <p class="pub-venue">
-                IEEE Consumer Communication and Networking Conference (CCNC), 2027 — Accepted
-              </p>
-            </div>
-          </li>
-          <li class="pub">
-            <span class="pub-year">2026</span>
-            <div>
-              <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11623620" target="_blank" rel="noopener">Application-Aware Learning-Based Uplink Traffic Allocation for Wi-Fi 7 MLO</a></p>
-              <p class="pub-authors">
-                Brian Trinh, Samarth Kulkarni, <span class="me">Duy P. Ngo</span>,
-                Krishna Murthy Kattiyan Ramamoorthy
-              </p>
-              <p class="pub-venue">
-                IEEE 32nd International Symposium on Local and Metropolitan Area Networks (LANMAN), 2026
-              </p>
-            </div>
-          </li>
-        </ul>
       </div>
     </section>
   </main>

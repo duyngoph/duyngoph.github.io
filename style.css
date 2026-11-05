@@ -514,15 +514,6 @@ main {
   color: var(--text-muted);
 }
 
-.model-dark,
-[data-theme="dark"] .model-light {
-  display: none;
-}
-
-[data-theme="dark"] .model-dark {
-  display: block;
-}
-
 /* ----------  Publications  ---------- */
 .pub-list {
   list-style: none;

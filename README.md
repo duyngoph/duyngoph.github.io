@@ -8,7 +8,8 @@ Built as a static site (plain HTML + CSS + a little JS) — no build step, no de
 | File | Page |
 |------|------|
 | `index.html` | About — hero, bio, research focus, news |
-| `research.html` | Research statement, interests, publications |
+| `research.html` | Research statement, interests, smart-factory and Sionna RT renders |
+| `publications.html` | Papers, conference publications, and Google Scholar profile |
 | `projects.html` | Selected projects |
 | `cv.html` | Full CV (education, experience, skills, awards, certifications) |
 
