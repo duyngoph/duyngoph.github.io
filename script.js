@@ -1,68 +1,72 @@
-// Mobile navigation toggle
+// Mobile navigation stays usable without JavaScript; collapse only after setup.
 (function () {
   var toggle = document.querySelector(".nav-toggle");
   var links = document.getElementById("navLinks");
   if (!toggle || !links) return;
 
+  function setOpen(open) {
+    links.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+
   toggle.addEventListener("click", function () {
-    var open = links.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    var open = toggle.getAttribute("aria-expanded") !== "true";
+    setOpen(open);
+    if (open) links.querySelector("a").focus();
   });
 
-  // Close menu when a link is tapped (mobile)
-  links.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
+  links.addEventListener("click", function (event) {
+    if (event.target.closest("a")) setOpen(false);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && links.classList.contains("open")) {
+      setOpen(false);
+      toggle.focus();
     }
   });
+
+  document.addEventListener("click", function (event) {
+    if (!links.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+  });
+
+  document.addEventListener("focusin", function (event) {
+    if (!links.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+  });
+
+  var mobile = window.matchMedia("(max-width: 760px)");
+  mobile.addEventListener("change", function () {
+    if (mobile.matches && links.contains(document.activeElement)) toggle.focus();
+    setOpen(false);
+  });
+
+  document.documentElement.classList.add("nav-ready");
 })();
 
-// Dark mode toggle (initial theme is set by an inline script in <head>)
+// Keep the theme control's accessible name, state, and browser chrome in sync.
 (function () {
-  var btn = document.getElementById("themeToggle");
-  if (!btn) return;
+  var button = document.getElementById("themeToggle");
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (!button) return;
 
-  btn.addEventListener("click", function () {
+  function syncTheme() {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    var label = dark ? "Switch to light mode" : "Switch to dark mode";
+    button.setAttribute("aria-label", label);
+    button.setAttribute("title", label);
+    button.setAttribute("aria-pressed", String(dark));
+    if (meta) meta.setAttribute("content", dark ? "#181714" : "#fcfbf8");
+  }
+
+  button.addEventListener("click", function () {
     var current = document.documentElement.getAttribute("data-theme");
     var next = current === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem("theme", next);
-    } catch (e) {}
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    syncTheme();
   });
+
+  syncTheme();
+  document.documentElement.classList.add("theme-ready");
 })();
-
-// Scroll reveal: fade/slide blocks in as they enter the viewport
-(function () {
-  var reveals = [].slice.call(document.querySelectorAll(".reveal"));
-  if (!reveals.length) return;
-
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // No animation support (or user prefers reduced motion): just show everything
-  if (reduce || !("IntersectionObserver" in window)) {
-    reveals.forEach(function (el) {
-      el.classList.add("is-visible");
-    });
-    return;
-  }
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
-  );
-
-  reveals.forEach(function (el) {
-    observer.observe(el);
-  });
-})();
-
-
